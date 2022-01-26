@@ -1,0 +1,17 @@
+name: BedWars1058-PlayAgain
+version: '${project.version}'
+main: me.cubecrafter.playagain.PlayAgain
+api-version: 1.13
+softdepend: [BedWars1058]
+author: CubeCrafter
+description: Adds the play again feature to BedWars1058!
+permissions:
+  bw.playagain.admin:
+    description: Permission required to do /bw playagain-reload
+    default: op
+  bw.playagain.auto:
+    description: Permission required to auto play again on game end
+    default: op
+  bw.playagain.selector:
+    description: Permission required to select an arena
+    default: op

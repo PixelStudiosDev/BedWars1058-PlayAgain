@@ -1,0 +1,39 @@
+# BedWars1058-PlayAgain by CubeCrafter
+auto-playagain-on-game-end: true
+play-again-item:
+  slot: 7
+  material: PAPER
+  displayname: "&b&lPlay Again &7(Right Click)"
+  lore:
+    - "&7Right Click to Play Again!"
+playagain-menu-displayname: "Play Again | {arenagroup}"
+playagain-menu-size: 54
+playagain-menu-items:
+  arena-item:
+    slots: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43
+    material: PAPER
+    # Placeholders: {arenadisplayname},{arenaplayers},{arenamaxplayers},{arenagroup},{arenastatus},{arenaname}
+    displayname: '&a{arenadisplayname}'
+    lore:
+      - '&7Players: &e{arenaplayers}&7/&e{arenamaxplayers}'
+      - '&7Mode: &b{arenagroup}'
+  random-join-item:
+    slot: 49
+    material: FIREWORK_ROCKET
+    enchanted: true
+    displayname: "&aRandom Join"
+    lore:
+      - '&7Click to join a random arena!'
+  filler-item:
+    enabled: true
+    slots: 0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,44,45,46,47,48,50,51,52,53
+    material: GRAY_STAINED_GLASS_PANE
+    enchanted: false
+    displayname: "&f"
+    lore: []
+sounds:
+  no-permission-arena-selector: ENTITY_VILLAGER_NO
+messages:
+  no-permission-arena-selector: "&cYou don't have the permission to select the arena!"
+  config-reloaded: "&7Config successfully reloaded!"
+config-version: 2
