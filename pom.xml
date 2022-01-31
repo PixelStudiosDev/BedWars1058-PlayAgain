@@ -6,7 +6,7 @@
 
     <groupId>me.cubecrafter</groupId>
     <artifactId>BedWars1058-PlayAgain</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>BedWars1058-PlayAgain</name>
@@ -36,11 +36,11 @@
                     <relocations>
                         <relocation>
                             <pattern>com.cryptomorin.xseries</pattern>
-                            <shadedPattern>com.cryptomorin.xseries</shadedPattern>
+                            <shadedPattern>me.cubecrafter.playagain.libs.xseries</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>de.tr7zw.changeme.nbtapi</pattern>
-                            <shadedPattern>de.tr7zw.nbtapi</shadedPattern>
+                            <shadedPattern>me.cubecrafter.playagain.libs.nbtapi</shadedPattern>
                         </relocation>
                     </relocations>
                     <filters>

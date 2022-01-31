@@ -1,5 +1,9 @@
 # BedWars1058-PlayAgain by CubeCrafter
 auto-playagain-on-game-end: true
+playagain-countdown:
+  enabled: true
+  # Countdown Types: CHAT, ACTIONBAR and TITLE
+  type: ACTIONBAR
 play-again-item:
   slot: 7
   material: PAPER
@@ -33,7 +37,10 @@ playagain-menu-items:
     lore: []
 sounds:
   no-permission-arena-selector: ENTITY_VILLAGER_NO
+  play-again-countdown: ENTITY_CHICKEN_EGG
 messages:
   no-permission-arena-selector: "&cYou don't have the permission to select the arena!"
+  countdown-message: "&ePlaying again in &6{seconds}s"
+  countdown-stopped: "&cCountdown stopped because you have changed world!"
   config-reloaded: "&7Config successfully reloaded!"
-config-version: 2
+config-version: 3

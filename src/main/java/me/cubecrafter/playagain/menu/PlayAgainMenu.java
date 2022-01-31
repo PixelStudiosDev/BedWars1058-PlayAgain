@@ -21,7 +21,10 @@ public class PlayAgainMenu {
 
     public PlayAgainMenu(Player p){
         IArena playerArena = arenaUtil.getArenaByPlayer(p);
-        if(playerArena == null)return;
+        if(playerArena == null || !arenaUtil.isSpectating(p)){
+            p.sendMessage(TextUtil.color("&cYou can use this command only if you are a spectator!"));
+            return;
+        }
         currentGroup = playerArena.getGroup();
         Menu playAgain = new Menu(config.getInt("playagain-menu-size"), TextUtil.color(config.getString("playagain-menu-displayname").replace("{arenagroup}", playerArena.getGroup())));
         Iterator<String> it = Arrays.stream(config.getString("playagain-menu-items.arena-item.slots").split(",")).iterator();

@@ -2,6 +2,7 @@ package me.cubecrafter.playagain;
 
 import com.andrei1058.bedwars.api.BedWars;
 import com.cryptomorin.xseries.XMaterial;
+import me.cubecrafter.playagain.commands.OpenMenuCommand;
 import me.cubecrafter.playagain.commands.ReloadCommand;
 import me.cubecrafter.playagain.listeners.DeathListener;
 import me.cubecrafter.playagain.listeners.GameEndListener;
@@ -29,13 +30,14 @@ public final class PlayAgain extends JavaPlugin {
             instance = this;
             bw = Bukkit.getServicesManager().getRegistration(BedWars.class).getProvider();
             new ReloadCommand(bw.getBedWarsCommand(), "playagain-reload");
+            new OpenMenuCommand(bw.getBedWarsCommand(), "playagain");
             config = new FileManager("config", "plugins/BedWars1058/Addons/PlayAgain");
             getServer().getPluginManager().registerEvents(new GameEndListener(), this);
             getServer().getPluginManager().registerEvents(new InteractListener(), this);
             getServer().getPluginManager().registerEvents(new DeathListener(), this);
             getServer().getPluginManager().registerEvents(new MenuListener(), this);
             int pluginId = 14060;
-            Metrics metrics = new Metrics(this, pluginId);
+            new Metrics(this, pluginId);
             Bukkit.getConsoleSender().sendMessage(TextUtil.color("&8--------------------------------------------------"));
             Bukkit.getConsoleSender().sendMessage(TextUtil.color("&aBedWars1058-PlayAgain &7v" + getDescription().getVersion() + " &7by &cCubeCrafter"));
             Bukkit.getConsoleSender().sendMessage(TextUtil.color("&7Server Version: &6" + getServer().getName() + " " + getServer().getBukkitVersion()));

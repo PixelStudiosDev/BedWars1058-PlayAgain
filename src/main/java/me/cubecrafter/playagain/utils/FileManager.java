@@ -23,8 +23,7 @@ public class FileManager {
             }catch(IOException ex){
                 ex.printStackTrace();
             }
-            InputStream inputStream = PlayAgain.getInstance().getResource(filename + ".yml");
-            Reader reader = new InputStreamReader(inputStream);
+            Reader reader = new InputStreamReader(PlayAgain.getInstance().getResource(filename + ".yml"));
             FileConfiguration cfg = YamlConfiguration.loadConfiguration(reader);
             try{
                 cfg.save(config);
@@ -64,7 +63,20 @@ public class FileManager {
         if(getConfigVersion() == 1){
             yml.set("messages.no-permission-arena-selector", "&cYou don't have the permission to select the arena!");
             yml.set("sounds.no-permission-arena-selector", "ENTITY_VILLAGER_NO");
-            setConfigVersion(2);
+            yml.set("playagain-countdown.enabled", true);
+            yml.set("playagain-countdown.type", "ACTIONBAR");
+            yml.set("sounds.play-again-countdown", "ENTITY_CHICKEN_EGG");
+            yml.set("messages.countdown-message", "&ePlaying again in &6{seconds}s");
+            yml.set("messages.countdown-stopped", "&cCountdown stopped because you have changed world!");
+            setConfigVersion(3);
+            save();
+        }else if(getConfigVersion() == 2){
+            yml.set("playagain-countdown.enabled", true);
+            yml.set("playagain-countdown.type", "ACTIONBAR");
+            yml.set("sounds.play-again-countdown", "ENTITY_CHICKEN_EGG");
+            yml.set("messages.countdown-message", "&ePlaying again in &6{seconds}s");
+            yml.set("messages.countdown-stopped", "&cCountdown stopped because you have changed world!");
+            setConfigVersion(3);
             save();
         }
     }
