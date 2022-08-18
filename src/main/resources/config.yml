@@ -1,46 +1,81 @@
-# BedWars1058-PlayAgain by CubeCrafter
-auto-playagain-on-game-end: true
-playagain-countdown:
-  enabled: true
-  # Countdown Types: CHAT, ACTIONBAR and TITLE
-  type: ACTIONBAR
-play-again-item:
-  slot: 7
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# | PLAY AGAIN ADDON CONFIGURATION           |
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# Version: ${project.version}
+# Author: CubeCrafter
+# Issues: https://github.com/CubeCrafter/BedWars1058-PlayAgain/issues
+# Discord: https://discord.gg/ehjkwp5Fn4
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# | SETTINGS                                 |
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+lobby-port: 10126
+inventory-item:
   material: PAPER
   displayname: "&b&lPlay Again &7(Right Click)"
   lore:
     - "&7Right Click to Play Again!"
-playagain-menu-displayname: "Play Again | {arenagroup}"
-playagain-menu-size: 54
-playagain-menu-items:
-  arena-item:
-    slots: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43
-    material: PAPER
-    # Placeholders: {arenadisplayname},{arenaplayers},{arenamaxplayers},{arenagroup},{arenastatus},{arenaname}
-    displayname: '&a{arenadisplayname}'
-    lore:
-      - '&7Players: &e{arenaplayers}&7/&e{arenamaxplayers}'
-      - '&7Mode: &b{arenagroup}'
-  random-join-item:
-    slot: 49
-    material: FIREWORK_ROCKET
-    enchanted: true
-    displayname: "&aRandom Join"
-    lore:
-      - '&7Click to join a random arena!'
-  filler-item:
-    enabled: true
-    slots: 0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,44,45,46,47,48,50,51,52,53
+  spectator-slot: 7
+  win-slot: 0
+menu:
+  title: "Play Again"
+  rows: 6
+  filler:
+    enabled: false
     material: GRAY_STAINED_GLASS_PANE
-    enchanted: false
     displayname: "&f"
-    lore: []
+    slots: 0,1,2,3
+  items:
+    arena-item:
+      # Available Placeholders: {displayname}, {name}, {players}, {max_players}, {max_team_players}, {group}, {state}
+      material: PAPER
+      displayname: "&a{displayname}"
+      lore:
+        - ""
+        - "&7Players: &a{players}&7/&a{max_players}"
+        - "&7Mode: &a{group}"
+        - ""
+        - "&eClick to play!"
+      slots: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34
+    random-arena-item:
+      material: FIREWORK_ROCKET
+      displayname: "&aRandom Arena"
+      lore:
+        - "&7Group: &8{current}"
+        - ""
+        - "&eClick to play!"
+      slot: 39
+    filter-item:
+      material: HOPPER
+      displayname: "&aFilter Arenas"
+      lore:
+        - "&7Current: &8{current}"
+        - ""
+        - "&eClick to change!"
+      slot: 41
+    previous-page-item:
+      material: ARROW
+      displayname: "&aPrevious Page"
+      lore:
+        - "&ePage {page}"
+      slot: 18
+    next-page-item:
+      material: ARROW
+      displayname: "&aNext Page"
+      lore:
+        - "&ePage {page}"
+      slot: 26
+    back-item:
+      material: ARROW
+      displayname: "&cGo Back"
+      lore:
+        - "&7To play Bed Wars"
+      slot: 49
 sounds:
-  no-permission-arena-selector: ENTITY_VILLAGER_NO
-  play-again-countdown: ENTITY_CHICKEN_EGG
+  permission-denied: ENTITY_VILLAGER_NO
+  menu-click: ENTITY_CHICKEN_EGG
 messages:
-  no-permission-arena-selector: "&cYou don't have the permission to select the arena!"
-  countdown-message: "&ePlaying again in &6{seconds}s"
-  countdown-stopped: "&cCountdown stopped because you have changed world!"
-  config-reloaded: "&7Config successfully reloaded!"
-config-version: 3
+  selector-permission-denied: "&cYou do not have permission to select an arena!"
+  party-too-big: "&cYour party is too big to join this arena!"
+  not-party-owner: "&cOnly the owner of the party can play again!"
