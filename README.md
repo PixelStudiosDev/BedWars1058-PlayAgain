@@ -1,6 +1,1 @@
-# BedWars1058-PlayAgain
-Adds the play again feature to BedWars1058!
-
-Polymart: https://polymart.org/resource/bedwars1058-play-again-addon.1946 <br>
-Discord: https://discord.gg/dChtBt2Jvc <br>
-Donate: https://paypal.me/cubecrafter <br>
+![](https://polymart-attachments.s3.amazonaws.com/d9f24741-fb54-4a72-9b33-b363650dcdf2/default/attachment.png)
