@@ -8,9 +8,6 @@ softdepend:
   - BedWars1058
   - BedWarsProxy
 permissions:
-  bw.playagain.admin:
-    description: Permission required to use the reload command
-    default: op
   bw.playagain.auto:
     description: Permission required to auto queue
     default: op

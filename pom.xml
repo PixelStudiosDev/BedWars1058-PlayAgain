@@ -6,15 +6,15 @@
 
     <groupId>me.cubecrafter</groupId>
     <artifactId>BedWars1058-PlayAgain</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <packaging>jar</packaging>
 
     <name>BedWars1058-PlayAgain</name>
     <description>Adds the play again feature to BedWars1058!</description>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
