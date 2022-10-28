@@ -2,7 +2,6 @@ package me.cubecrafter.playagain.arena;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import lombok.Getter;
 import me.cubecrafter.playagain.PlayAgain;
 import me.cubecrafter.playagain.config.Configuration;
 import me.cubecrafter.playagain.utils.TextUtil;
@@ -64,10 +63,7 @@ public class SocketTask implements Runnable {
             in = new Scanner(socket.getInputStream());
             out = new PrintWriter(socket.getOutputStream(), true);
         } catch (IOException e) {
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException ignored) {}
-            connect();
+            Bukkit.getScheduler().runTaskLater(PlayAgain.getInstance(), this::connect, 100L);
             return;
         }
         TextUtil.info("Connection with the lobby server established!");
