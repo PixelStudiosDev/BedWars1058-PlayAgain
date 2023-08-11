@@ -3,15 +3,15 @@ package me.cubecrafter.playagain.config;
 import lombok.RequiredArgsConstructor;
 import me.cubecrafter.playagain.PlayAgain;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
-public enum Configuration {
+public enum Config {
 
-    BUNGEE_LOBBY_PORT("lobby-port"),
     INVENTORY_ITEM("inventory-item"),
     INVENTORY_ITEM_SPECTATOR_SLOT("inventory-item.spectator-slot"),
     INVENTORY_ITEM_WIN_SLOT("inventory-item.win-slot"),
@@ -35,29 +35,29 @@ public enum Configuration {
     SOUNDS_PERMISSION_DENIED("sounds.permission-denied"),
     SOUNDS_MENU_CLICK("sounds.menu-click"),
     MESSAGES_SELECTOR_PERMISSION_DENIED("messages.selector-permission-denied"),
-    MESSAGES_PARTY_TOO_BIG("messages.party-too-big"),
     MESSAGES_NOT_PARTY_OWNER("messages.not-party-owner");
 
+    private static final YamlConfiguration CONFIG = PlayAgain.getInstance().getFileManager().getConfig();
     private final String path;
 
-    public String getAsString() {
-        return PlayAgain.getInstance().getFileManager().getConfig().getString(path);
+    public String asString() {
+        return CONFIG.getString(path);
     }
 
-    public int getAsInt() {
-        return PlayAgain.getInstance().getFileManager().getConfig().getInt(path);
+    public int asInt() {
+        return CONFIG.getInt(path);
     }
 
-    public boolean getAsBoolean() {
-        return PlayAgain.getInstance().getFileManager().getConfig().getBoolean(path);
+    public boolean asBoolean() {
+        return CONFIG.getBoolean(path);
     }
 
-    public ConfigurationSection getAsConfigSection() {
-        return PlayAgain.getInstance().getFileManager().getConfig().getConfigurationSection(path);
+    public ConfigurationSection asSection() {
+        return CONFIG.getConfigurationSection(path);
     }
 
-    public List<Integer> getAsIntegerList() {
-        return Arrays.stream(PlayAgain.getInstance().getFileManager().getConfig().getString(path).split(",")).map(Integer::parseInt).collect(Collectors.toList());
+    public List<Integer> asIntegerList() {
+        return Arrays.stream(CONFIG.getString(path).split(",")).map(Integer::parseInt).collect(Collectors.toList());
     }
 
 }

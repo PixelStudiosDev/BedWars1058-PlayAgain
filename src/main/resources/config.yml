@@ -3,17 +3,16 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 # Version: ${project.version}
 # Author: CubeCrafter
-# Issues: https://github.com/CubeCrafter/BedWars1058-PlayAgain/issues
-# Discord: https://discord.gg/ehjkwp5Fn4
+# Issues: https://github.com/PixelStudiosDev/BedWars1058-PlayAgain/issues
+# Discord: https://pixelstudios.dev/discord
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 # | SETTINGS                                 |
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
-lobby-port: 10126
 inventory-item:
   material: PAPER
-  displayname: "&b&lPlay Again &7(Right Click)"
+  name: "&b&lPlay Again &7(Right Click)"
   lore:
     - "&7Right Click to Play Again!"
   spectator-slot: 7
@@ -24,13 +23,13 @@ menu:
   filler:
     enabled: false
     material: GRAY_STAINED_GLASS_PANE
-    displayname: "&f"
+    name: "&f"
     slots: 0,1,2,3
   items:
     arena-item:
       # Available Placeholders: {displayname}, {name}, {players}, {max_players}, {max_team_players}, {group}, {state}
       material: PAPER
-      displayname: "&a{displayname}"
+      name: "&a{displayname}"
       lore:
         - ""
         - "&7Players: &a{players}&7/&a{max_players}"
@@ -40,7 +39,7 @@ menu:
       slots: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34
     random-arena-item:
       material: FIREWORK_ROCKET
-      displayname: "&aRandom Arena"
+      name: "&aRandom Arena"
       lore:
         - "&7Group: &8{current}"
         - ""
@@ -48,7 +47,7 @@ menu:
       slot: 39
     filter-item:
       material: HOPPER
-      displayname: "&aFilter Arenas"
+      name: "&aFilter Arenas"
       lore:
         - "&7Current: &8{current}"
         - ""
@@ -56,19 +55,19 @@ menu:
       slot: 41
     previous-page-item:
       material: ARROW
-      displayname: "&aPrevious Page"
+      name: "&aPrevious Page"
       lore:
         - "&ePage {page}"
       slot: 18
     next-page-item:
       material: ARROW
-      displayname: "&aNext Page"
+      name: "&aNext Page"
       lore:
         - "&ePage {page}"
       slot: 26
     back-item:
       material: ARROW
-      displayname: "&cGo Back"
+      name: "&cGo Back"
       lore:
         - "&7To play Bed Wars"
       slot: 49
@@ -77,5 +76,4 @@ sounds:
   menu-click: ENTITY_CHICKEN_EGG
 messages:
   selector-permission-denied: "&cYou do not have permission to select an arena!"
-  party-too-big: "&cYour party is too big to join this arena!"
   not-party-owner: "&cOnly the owner of the party can play again!"

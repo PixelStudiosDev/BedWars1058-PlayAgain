@@ -6,7 +6,7 @@
 
     <groupId>me.cubecrafter</groupId>
     <artifactId>BedWars1058-PlayAgain</artifactId>
-    <version>2.0.2</version>
+    <version>2.1.0</version>
     <packaging>jar</packaging>
 
     <name>BedWars1058-PlayAgain</name>
@@ -34,28 +34,21 @@
                             <pattern>org.bstats</pattern>
                             <shadedPattern>me.cubecrafter.playagain.libs.bstats</shadedPattern>
                         </relocation>
+                        <relocation>
+                            <pattern>me.cubecrafter.xutils</pattern>
+                            <shadedPattern>me.cubecrafter.playagain.libs.xutils</shadedPattern>
+                        </relocation>
                     </relocations>
                     <filters>
                         <filter>
                             <artifact>*:*</artifact>
                             <excludes>
-                                <exclude>com/cryptomorin/xseries/XBiome*</exclude>
-                                <exclude>com/cryptomorin/xseries/NMSExtras*</exclude>
-                                <exclude>com/cryptomorin/xseries/NoteBlockMusic*</exclude>
-                                <exclude>com/cryptomorin/xseries/SkullCacheListener*</exclude>
-                                <exclude>com/cryptomorin/xseries/XBlock*</exclude>
-                                <exclude>com/cryptomorin/xseries/XEntity*</exclude>
-                                <exclude>com/cryptomorin/xseries/XItemStack*</exclude>
-                                <exclude>com/cryptomorin/xseries/XTag*</exclude>
-                                <exclude>com/cryptomorin/xseries/XEnchantment*</exclude>
-                                <exclude>com/cryptomorin/xseries/XPotion*</exclude>
-                                <exclude>com/cryptomorin/xseries/particles/*</exclude>
-                                <exclude>com/cryptomorin/xseries/messages/*</exclude>
                                 <exclude>META-INF/**</exclude>
                             </excludes>
                         </filter>
                     </filters>
                     <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <minimizeJar>true</minimizeJar>
                 </configuration>
                 <executions>
                     <execution>
@@ -88,6 +81,10 @@
             <id>andrei1058-repo</id>
             <url>https://repo.andrei1058.dev/releases/</url>
         </repository>
+        <repository>
+            <id>jitpack</id>
+            <url>https://jitpack.io/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -100,34 +97,32 @@
         <dependency>
             <groupId>com.andrei1058.bedwars</groupId>
             <artifactId>bedwars-api</artifactId>
-            <version>22.7</version>
+            <version>23.3</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.andrei1058.bedwars</groupId>
-            <artifactId>proxy-plugin</artifactId>
-            <version>1.2.4</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/proxy-plugin-1.2.4.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.github.cryptomorin</groupId>
             <artifactId>XSeries</artifactId>
-            <version>9.0.0</version>
+            <version>9.4.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.26</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.bstats</groupId>
             <artifactId>bstats-bukkit</artifactId>
-            <version>3.0.0</version>
+            <version>3.0.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pixelstudiosdev</groupId>
+            <artifactId>xutils</artifactId>
+            <version>2fb23bb775</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
-
 </project>

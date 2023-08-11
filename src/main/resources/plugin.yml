@@ -4,9 +4,8 @@ main: me.cubecrafter.playagain.PlayAgain
 api-version: 1.13
 author: CubeCrafter
 description: Adds the play again feature to BedWars1058!
-softdepend:
+depend:
   - BedWars1058
-  - BedWarsProxy
 permissions:
   bw.playagain.auto:
     description: Permission required to auto queue
