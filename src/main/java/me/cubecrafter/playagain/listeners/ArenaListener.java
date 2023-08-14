@@ -25,7 +25,7 @@ public class ArenaListener implements Listener {
     public void onFinalKill(PlayerKillEvent event) {
         if (!event.getCause().isFinalKill()) return;
 
-        Tasks.later(() -> giveItem(event.getKiller(), false), 10L);
+        Tasks.later(() -> giveItem(event.getVictim(), true), 10L);
     }
 
     @EventHandler
@@ -66,7 +66,7 @@ public class ArenaListener implements Listener {
 
     public void giveItem(Player player, boolean spectator) {
         ItemStack item = ItemBuilder.fromConfig(Config.INVENTORY_ITEM.asSection()).build();
-        plugin.getBedWars().getVersionSupport().setTag(item, "play-again", "true");
+        item = plugin.getBedWars().getVersionSupport().setTag(item, "play-again", "true");
 
         player.getInventory().setItem(spectator ? Config.INVENTORY_ITEM_SPECTATOR_SLOT.asInt() : Config.INVENTORY_ITEM_WIN_SLOT.asInt(), item);
     }

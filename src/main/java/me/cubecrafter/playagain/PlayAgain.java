@@ -5,6 +5,7 @@ import com.andrei1058.bedwars.api.arena.IArena;
 import lombok.Getter;
 import me.cubecrafter.playagain.config.FileManager;
 import me.cubecrafter.playagain.listeners.ArenaListener;
+import me.cubecrafter.xutils.Events;
 import me.cubecrafter.xutils.Tasks;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
@@ -30,7 +31,7 @@ public final class PlayAgain extends JavaPlugin {
         this.fileManager = new FileManager(this);
         this.bedWars = Bukkit.getServicesManager().getRegistration(BedWars.class).getProvider();
 
-        getServer().getPluginManager().registerEvents(new ArenaListener(this), this);
+        Events.register(new ArenaListener(this));
 
         new Metrics(this, 14060);
     }
